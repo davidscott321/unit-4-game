@@ -9,34 +9,6 @@ $(document).ready(function()
     var total = 0;
     var wins = 0;
     var losses = 0;
-    
-    function resetGame()
-    {
-        target = Math.floor(Math.random()*102)+19;
-        $(".targetScore").text(target);
-        redValue = Math.floor(Math.random()*12+1);
-        blueValue = Math.floor(Math.random()*12+1);
-        yellowValue = Math.floor(Math.random()*12+1);
-        greenValue = Math.floor(Math.random()*12+1);
-        total = 0;
-        $(".totalScore").text(total);
-    } 
-
-    function winGame()
-    {
-        $(".message").text("You won!");
-        wins++;
-        $(".wins").text(wins);
-        resetGame();
-    }
-
-    function loseGame()
-    {
-        $(".message").text("You lost!");
-        losses++;
-        $(".losses").text(losses);
-        resetGame();
-    }
 
     $(".red").on("click", function(){
         total += redValue;
@@ -82,4 +54,31 @@ $(document).ready(function()
             loseGame();
         }   
     });
+
+    function winGame()
+    {
+        $(".message").text("You won!");
+        wins++;
+        $(".wins").text(wins);
+        resetGame();
+    }
+
+    function loseGame()
+    {
+        $(".message").text("You lost!");
+        losses++;
+        $(".losses").text(losses);
+        resetGame();
+    }
+    function resetGame()
+    {
+        target = Math.floor(Math.random()*102)+19;
+        $(".targetScore").text(target);
+        redValue = Math.floor(Math.random()*12+1);
+        blueValue = Math.floor(Math.random()*12+1);
+        yellowValue = Math.floor(Math.random()*12+1);
+        greenValue = Math.floor(Math.random()*12+1);
+        total = 0;
+        $(".totalScore").text(total);
+    }
 });
